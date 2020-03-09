@@ -1,2 +1,2 @@
-language = "bash"
-run = "python3 main.py" # replace with "python initDB.py" to build database
+language = "python"
+# run = "python3 main.py" # replace with "python initDB.py" to build database
