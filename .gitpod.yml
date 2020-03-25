@@ -1,0 +1,11 @@
+tasks:
+  - init: npm i -g newman
+  - init: pip3 install -r ./requirements.txt
+    command: poetry install
+image:
+  file: .gitpod.Dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 8080
+    onOpen: open-browser

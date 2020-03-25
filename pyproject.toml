@@ -2,6 +2,7 @@
 [tool.poetry]
 authors = ["Your Name <you@example.com>"]
 name = "root"
+description = "A2 Template"
 version = "0.0.0"
 [tool.poetry.dependencies]
 flask = "==1.0.2"
