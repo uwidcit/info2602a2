@@ -14,6 +14,9 @@ class MyPokemon(db.Model):
       'stats':self.pokemon.toDict()
     }
 
+class User(db.Model):
+  pass
+
 ## Create a User Model
 ## must have set_password, check_password and to Dict
 

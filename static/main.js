@@ -5,7 +5,7 @@ const maxPokemon = 964;
 const DEFAULT_LIMIT = 50;
 const DEFAULT_OFFSET = 50;
 //repalce with your server's url
-const server = "https://info-2602-a2-starter.snickdx.repl.co/";
+const server = "https://info-2602-a2-starter.snickdx.repl.co";
 let token = "";
 let selected = "";
 
@@ -137,10 +137,11 @@ async function loadTable(){
                           <td>${rec.name}</td>
                           <td>${rec.stats.name}</td>
                           <td>
-                            <a class="waves-effect waves-light btn" onclick="releasePokemon(${i++})"><i class="material-icons left">delete</i>Release</a>
+                            <a class="waves-effect waves-light btn" onclick="releasePokemon(${i})"><i class="material-icons left">delete</i>Release</a>
                               <a data-target="modal1" class="modal-trigger waves-effect waves-light btn" onclick="renamePokemon({name:'${rec.name}', id:'${i}'})"><i class="material-icons left" >edit</i>Rename</a>
                           </td>
                         </tr>`;
+      i++;
     }
 }
 
