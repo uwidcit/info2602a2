@@ -1,7 +1,7 @@
 tasks:
-  - command: pip3 install -r requirements.txt
+  - init: pip3 install -r requirements.txt
     command: python3 main.py
-  - command: npm install
+    command: npm install
     name:  Test Terminal
 
 image:
