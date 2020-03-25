@@ -1,13 +1,12 @@
-tasks:
-  - init: pip3 install -r requirements.txt
-    command: python3 main.py
-    command: npm install
-    name:  Test Terminal
-
-image:
+--- 
+image: 
   file: .gitpod.Dockerfile
-
-# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
-ports:
-  - port: 8080
+ports: 
+  - 
     onOpen: open-browser
+    port: 8080
+tasks: 
+  - 
+    command: "npm install"
+    init: "pip3 install -r requirements.txt"
+    name: "Test Terminal"
