@@ -10,18 +10,12 @@ let browser;
 let page;
 
 before(async function(){
-  this.timeout(TIMEOUT);
-  try{
-    browser = await puppeteer.launch({ headless: HEADLESS,  defaultViewport: null});
-  }catch(e){
-    browser = await puppeteer.launch({headless: HEADLESS,  defaultViewport: null});
-  }
-  
-  page = await browser.newPage();
-  await page.emulateMedia("screen");
-  await page.goto(URL, { waitUntil: 'networkidle2'});
+    this.timeout(TIMEOUT);
+    browser = await puppeteer.launch({ headless: HEADLESS,  defaultViewport: null,  args: ['--no-sandbox', '--disable-setuid-sandbox']});
+    page = await browser.newPage();
+    await page.emulateMedia("screen");
+    await page.goto(URL, { waitUntil: 'networkidle2'});
 });
-
 
 function getInnerText(selector){
   return page.evaluate(selector=>document.querySelector(selector).innerText, selector);

@@ -1,7 +1,9 @@
 tasks:
-  - init: npm i -g newman mocha puppeteer
   - init: pip3 install -r ./requirements.txt
     command: poetry install
+    command: npm install
+  - command: python3 main.py
+
 image:
   file: .gitpod.Dockerfile
 
