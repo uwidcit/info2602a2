@@ -1,8 +1,8 @@
 tasks:
-  - init: pip3 install -r ./requirements.txt
-    command: poetry install
-    command: npm install
-  - command: python3 main.py
+  - command: pip3 install -r requirements.txt
+    command: python3 main.py
+  - command: npm install
+    name:  Test Terminal
 
 image:
   file: .gitpod.Dockerfile
