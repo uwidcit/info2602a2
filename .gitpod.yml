@@ -7,7 +7,6 @@ ports:
     port: 8080
 tasks: 
   - 
-    init: "npm install"
-    command: "pip3 install -r requirements.txt"
-    command: "python3 main.py"
-    name: "Test Terminal"
+    init: npm install
+    command: pip3 install -r requirements.txt
+    command: python3 main.py
