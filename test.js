@@ -40,23 +40,23 @@ describe('Test Suite 1: The Pokelisting Table', ()=>{
     '50 rows': ' table>tbody>tr:nth-child(50)'
   })
 
-  it('Should have "Bulbasaur in first column of first row', async()=>{
+  it('Should have "bulbasaur" in first column of first row', async()=>{
       expect(await getInnerText('tr:nth-child(1) > td:nth-child(1)')).to.eql('Bulbasaur')
   });
 
-   it('Should have "Bulbasaur in first column of first row', async()=>{
+   it('Should have "grass" in first column of first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(2)')).to.eql('grass')
   });
 
-    it('Should have "Bulbasaur in first column of first row', async()=>{
+    it('Should have "poison" in first column of first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(3)')).to.eql('poison')
   });
 
-  it('Should have "Bulbasaur in first column of first row', async()=>{
+  it('Should have "6.9" r in first column of first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(4)')).to.eql('6.9')
   });
 
-  it('Should have "Bulbasaur in first column of first row', async()=>{
+  it('Should have "0.7" in first column of first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(5)')).to.eql('0.7')
   });
 });
