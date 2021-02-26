@@ -4,9 +4,11 @@
   "description": "[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/uwidcit/info2602a2)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && mocha >> report.txt",
-    "newman" : "newman run a2collection.json -g globals.json; return 0;",
-    "start": "npm run newman && npm run newman >> api-report.txt"
+    "init": "python3 App/initDB.py",
+    "start" :"python3 App/main.py",
+    "app-test": "mocha tests/test.js && mocha tests/test.js >> app-report.txt; return 0",
+    "api-test": "npm run newman && npm run newman >> api-report.txt",
+    "newman": "newman run tests/a2collection.json -e environment.json; return 0;"
   },
   "repository": {
     "type": "git",

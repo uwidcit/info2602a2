@@ -1,7 +1,7 @@
-from main import db, Pokemon, app
+from main import db, app #, Pokemon
 import csv
 
-db.create_all(app=app);
+db.create_all(app=app)
 
 # add code to parse csv, create and save pokemon objects
 

@@ -1,54 +1,43 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/uwidcit/info2602a2) 
 
-# Testing
-1. Update globals.json with your server url and a valid user token
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/583570/SzRuZCp8?version=latest)
 
-globals.json
+# Running
+When opened in gitpod the server should be running already if it isn't
+you can start it with the following command;
+
+```bash
+npm run start
 ```
+
+# Testing
+1. Update environment.json with your server's url
+
+```json
 {
-	"id": "80cd143f-8bb4-4313-8f28-a1eaa6ca3cee",
+	"id": "af99e18d-e0b6-47aa-b586-2cec222c581a",
+	"name": "A2 Gitpod",
 	"values": [
 		{
-			"key": "a2host",
-			"value": [server url here],
-			"enabled": true
-		},
-		{
-			"key": "token",
-			"value": [valid user token here],
+			"key": "host",
+			"value": "[your server url]",
 			"enabled": true
 		}
 	],
-	"name": "INFO 2602 Globals",
-	"_postman_variable_scope": "globals",
-	"_postman_exported_at": "2020-03-25T01:40:13.952Z",
-	"_postman_exported_using": "Postman/7.21.1"
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-02-25T23:09:00.839Z",
+	"_postman_exported_using": "Postman/8.0.6"
 }
 ```
 
-2. Update test.js with your server url
-
-test.js
-```
-const puppeteer = require('puppeteer');
-const { expect, assert }  = require('chai');
-
-
-let URL = [server root url];
-
-const HEADLESS = true;
-const TIMEOUT = 12000;
-...
-```
-
-3. Execute the following command to test Pokelisting page
+2. Execute the following command to test Pokelisting page
 
 ```
-npm test
+npm run app-test
 ```
 
-4. Execute the following comand to test the api
+3. Execute the following comand to test the api
 
 ```
-npm start
+npm run api-test
 ```

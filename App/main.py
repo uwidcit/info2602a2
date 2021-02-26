@@ -4,7 +4,7 @@ from flask_jwt import JWT, jwt_required, current_identity
 from sqlalchemy.exc import IntegrityError
 from datetime import timedelta 
 
-# from models import db, User, Pokemon, MyPokemon
+from models import db #, User, Pokemon, MyPokemon
 
 ''' Begin boilerplate code '''
 def create_app():
@@ -13,7 +13,7 @@ def create_app():
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
   app.config['SECRET_KEY'] = "MYSECRET"
   app.config['JWT_EXPIRATION_DELTA'] = timedelta(days = 7) 
-  # db.init_app(app) un comment when models created
+  db.init_app(app)
   return app
 
 app = create_app()
@@ -37,4 +37,4 @@ def client_app():
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8080)
+  app.run(host='0.0.0.0', port=8080, debug=True)

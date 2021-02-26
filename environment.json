@@ -1,0 +1,14 @@
+{
+	"id": "af99e18d-e0b6-47aa-b586-2cec222c581a",
+	"name": "A2 Gitpod",
+	"values": [
+		{
+			"key": "host",
+			"value": "https://8080-indigo-snake-dw7hyigu.ws-us03.gitpod.io",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-02-25T23:09:00.839Z",
+	"_postman_exported_using": "Postman/8.0.6"
+}
