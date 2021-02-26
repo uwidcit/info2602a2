@@ -1,14 +1,10 @@
-const endpoint = 'https://pokeapi.co/api/v2';
 let mode;
 const minPokemon = 0;
 const maxPokemon = 964;
 const DEFAULT_LIMIT = 50;
 const DEFAULT_OFFSET = 50;
-//repalce with your server's url
-const server = "https://info-2602-a2-starter.snickdx.repl.co";
 let token = "";
 let selected = "";
-
 let count = 0;
 
 async function postData(url = '', data = {}, token) {
