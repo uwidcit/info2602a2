@@ -6,6 +6,8 @@ const DEFAULT_OFFSET = 50;
 let token = "";
 let selected = "";
 let count = 0;
+const endpoint = 'https://pokeapi.co/api/v2';
+const server = "";
 
 async function postData(url = '', data = {}, token) {
     const response = await fetch(url, {
@@ -35,7 +37,7 @@ function displayPokemon(pokemon){
     let result = document.querySelector('#result');
 
      result.innerHTML =  `
-     <div class="card col m6 offset-m3" style="margin-top: 20px">
+     <div class="card col m4 offset-m4" style="margin-top: 20px">
         <div class="card-image" >
             <img class="teal" src="${pokemon.sprites.front_default}" alt="${pokemon.name} Image">
             <span class="card-title"><p>${pokemon.name} # ${pokemon.id}</p></span>

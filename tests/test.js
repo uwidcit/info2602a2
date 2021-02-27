@@ -1,8 +1,9 @@
 const puppeteer = require('puppeteer');
 const { expect, assert }  = require('chai');
 
-//replace with the root of you server
-let URL ="https://8080-eff293cb-ed70-48df-aea9-42af1fa44109.ws-us02.gitpod.io";
+const environment = require('../environment.json');
+
+const URL = environment.values.filter(val => val.key === "host")[0].value;
 
 const HEADLESS = true;
 const TIMEOUT = 12000;
@@ -35,7 +36,7 @@ describe('Test Suite 1: The Pokelisting Table', ()=>{
 
 
   checkElements({
-    'an tabulation of pigeon data of the appropriate structure': 'table>thead+tbody',
+    'uses the appropriate html table elements': 'table>thead+tbody',
     '5 columns': 'table>thead>tr>th:nth-child(5)',
     '50 rows': ' table>tbody>tr:nth-child(50)'
   })
