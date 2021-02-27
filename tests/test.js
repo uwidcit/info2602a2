@@ -36,28 +36,28 @@ describe('Test Suite 1: The Pokelisting Table', ()=>{
 
 
   checkElements({
-    'uses the appropriate html table elements': 'table>thead+tbody',
+    'the appropriate HTML table elements': 'table>thead+tbody',
     '5 columns': 'table>thead>tr>th:nth-child(5)',
     '50 rows': ' table>tbody>tr:nth-child(50)'
   })
 
-  it('Should have "bulbasaur" in first column of first row', async()=>{
+  it('Should have "bulbasaur" in first column of the first row', async()=>{
       expect(await getInnerText('tr:nth-child(1) > td:nth-child(1)')).to.eql('Bulbasaur')
   });
 
-   it('Should have "grass" in first column of first row', async()=>{
+   it('Should have "grass" in first column of the first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(2)')).to.eql('grass')
   });
 
-    it('Should have "poison" in first column of first row', async()=>{
+    it('Should have "poison" in first column of the first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(3)')).to.eql('poison')
   });
 
-  it('Should have "6.9" r in first column of first row', async()=>{
+  it('Should have "6.9" r in first column of the first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(4)')).to.eql('6.9')
   });
 
-  it('Should have "0.7" in first column of first row', async()=>{
+  it('Should have "0.7" in first column of the first row', async()=>{
    expect(await getInnerText('tr:nth-child(1) > td:nth-child(5)')).to.eql('0.7')
   });
 });
