@@ -3,7 +3,7 @@ const { expect, assert }  = require('chai');
 
 const environment = require('../environment.json');
 
-const URL = environment.values.filter(val => val.key === "host")[0].value;
+const URL = 'http://localhost:8080';
 
 const HEADLESS = true;
 const TIMEOUT = 12000;

@@ -5,5 +5,5 @@ ports:
   - onOpen: open-browser
     port: 8080
 tasks: 
-  - init: npm install && pip3 install -r requirements.txt
-    command: python3 App/main.py
+  - init: npm install && pip install -r requirements.txt
+    command: python App/main.py

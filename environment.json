@@ -4,7 +4,7 @@
 	"values": [
 		{
 			"key": "host",
-			"value": "https://8080-indigo-snake-dw7hyigu.ws-us03.gitpod.io",
+			"value": "http://localhost:8080",
 			"enabled": true
 		}
 	],
