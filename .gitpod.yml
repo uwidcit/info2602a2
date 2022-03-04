@@ -4,6 +4,8 @@ image:
 ports: 
   - onOpen: open-browser
     port: 8080
+    visibility: public 
 tasks: 
-  - init: npm install && pip install -r requirements.txt
+  - init: npm install
+  - init: pip install -r requirements.txt
     command: python App/main.py
