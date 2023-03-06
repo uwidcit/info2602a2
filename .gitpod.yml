@@ -1,4 +1,3 @@
---- 
 image: 
   file: .gitpod.Dockerfile
 ports: 
@@ -6,5 +5,10 @@ ports:
     port: 8080
     visibility: public 
 tasks: 
-  - init: npm install
   - init: pip install -r requirements.txt
+    command: flask init & flask run
+  - init: npm install
+vscode:
+  extensions:
+    - ms-python.python
+    - alexcvzz.vscode-sqlite

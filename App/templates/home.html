@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block page %}Home{% endblock %}
+
+{% block link%}
+<ul id="nav-mobile" class="right">
+    <li><a href="/logout">Logout</a></li>
+</ul>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col m2 list-container collection" style="max-height: 84vh;">
+
+        <div class="list-item">
+            <a href="/app/1" id="poke-1" class="collection-item active" >Bulbasaur</a>
+        </div>
+    
+    </div>
+    
+    <div class="col m3">
+
+        <p class="text-center">Selected Pokemon</p>
+
+        <div class="card">
+            <!-- Selected Pokemon Content Here -->
+        </div>
+    </div>
+
+    <div class="col m7">
+        <p class="text-center">Your Pokemon</p>
+        <table>
+            <!-- Captured pokemon content here -->
+        </table>
+    </div>
+
+</div>
+
+
+<script>
+    var pokeElem = document.getElementById('poke-1');
+    pokeElem.scrollIntoView();
+</script>
+
+{% endblock %}
