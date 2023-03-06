@@ -1,7 +1,7 @@
 image: 
   file: .gitpod.Dockerfile
 ports: 
-  - onOpen: open-browser
+  - onOpen: open-preview
     port: 8080
     visibility: public 
 tasks: 
