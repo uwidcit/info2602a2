@@ -1,6 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin
 db = SQLAlchemy()
 
 class UserPokemon(db.Model):
@@ -8,7 +7,7 @@ class UserPokemon(db.Model):
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
   pokemon_id = db.Column(db.Integer, db.ForeignKey('pokemon.id'))
   pokemon = db.relationship('Pokemon')
-  name = db.Column(db.String(50), unique=True)
+  name = db.Column(db.String(50))
 
   def __init__(self, user_id, pokemon_id, name):
     self.user_id = user_id
@@ -25,7 +24,7 @@ class UserPokemon(db.Model):
       'species': self.pokemon.name
     }
 
-class User(db.Model, UserMixin):
+class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   username = db.Column(db.String(80), unique=True, nullable=False)
   email = db.Column(db.String(120), unique=True, nullable=False)
@@ -46,7 +45,8 @@ class User(db.Model, UserMixin):
         db.session.add(pokemon)
         db.session.commit()
         return pokemon
-      except Exception:
+      except Exception as e:
+        print(e)
         db.session.rollback()
         return None
     return None
@@ -80,7 +80,15 @@ class User(db.Model, UserMixin):
   
   #To String method
   def __repr__(self):
-      return f'<User {self.id}: {self.username}>'  
+      return f'<User {self.id}: {self.username}>'
+
+
+  def get_json(self):
+    return {
+      'id': self.id,
+      'username': self.username,
+      'email': self.email
+    }
 
 class Pokemon(db.Model):
   id = db.Column(db.Integer, primary_key=True)

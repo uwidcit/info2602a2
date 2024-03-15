@@ -16,7 +16,7 @@ build/
 .idea/
 docs/_build/
 .vscode
-
+data.db
 /node_modules
 # Coverage reports
 htmlcov/

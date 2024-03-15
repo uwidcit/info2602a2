@@ -1,10 +1,12 @@
 {
   "name": "info2602a2",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "flask init & mocha --timeout 3000"
+    "init": "flask init",
+    "start": "flask run",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "dependencies": {
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
-    "puppeteer": "^19.7.2"
+    "puppeteer": "^19.7.2",
+    "testsuite3": "^1.0.0"
   }
 }
