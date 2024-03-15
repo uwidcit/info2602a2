@@ -26,3 +26,4 @@ htmlcov/
 
 instance/
 __pycache__/
+App/data.db
