@@ -4,6 +4,7 @@
   "description": "",
   "main": "test.js",
   "scripts": {
+    "update-test": "npm install --save testsuite3@latest",
     "init": "flask init",
     "start": "flask run",
     "test": "mocha"
