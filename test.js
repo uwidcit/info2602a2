@@ -1,2 +1,3 @@
-const testsuite3 = require('testsuite3');
-
+const {runTests} = require('testsuite3');
+const config = require('./config.json');
+runTests(config);
