@@ -16,13 +16,6 @@ class UserPokemon(db.Model):
   
   def __repr__(self):
       return f'<UserPokemon {self.id} : {self.name} trainer {self.user.username}>'
-  
-  def get_json(self):
-    return{
-      'id': self.id,
-      'name': self.name,
-      'species': self.pokemon.name
-    }
 
 class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
@@ -71,7 +64,7 @@ class User(db.Model):
   #hashes the password parameter and stores it in the object
   def set_password(self, password):
       """Create hashed password."""
-      self.password = generate_password_hash(password, method='sha256')
+      self.password = generate_password_hash(password)
   
   #Returns true if the parameter is equal to the object’s password property
   def check_password(self, password):
@@ -82,13 +75,6 @@ class User(db.Model):
   def __repr__(self):
       return f'<User {self.id}: {self.username}>'
 
-
-  def get_json(self):
-    return {
-      'id': self.id,
-      'username': self.username,
-      'email': self.email
-    }
 
 class Pokemon(db.Model):
   id = db.Column(db.Integer, primary_key=True)
@@ -103,19 +89,3 @@ class Pokemon(db.Model):
   type1 = db.Column(db.String(255), nullable=False)
   type2 = db.Column(db.String(255), default=None)
   weight = db.Column(db.Float)
-
-  def get_json(self):
-   return {
-     'pokemon_id': self.id,
-     'name': self.name,
-     'attack': self.attack,
-     'defense': self.defense,
-     'hp': self.hp,
-     'height': self.height,
-     'sp_attack': self.sp_attack,
-     'sp_defense': self.sp_defense,
-     'speed': self.speed,
-     'type1': self.type1,
-     'type2': self.type2,
-     'weight': self.weight
-   }
